@@ -23,3 +23,8 @@ class User(Base):
 
     # Permission Based Attributes.
     is_active = Column(Boolean, default=False)
+
+    # Methods
+
+    def __repr__(self):
+        return '<User: a user object>'
