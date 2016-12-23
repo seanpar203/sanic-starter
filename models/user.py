@@ -1,6 +1,6 @@
 from sqlalchemy import (
     Column, String, Integer,
-    Sequence, DateTime, Date, Boolean
+    DateTime, Date, Boolean
 )
 
 from models import Base
@@ -9,7 +9,7 @@ from models import Base
 class User(Base):
     __tablename__ = 'users'
 
-    id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
+    id = Column(Integer, autoincrement=True, primary_key=True)
 
     # Authentication Attributes.
     email = Column(String(255))
