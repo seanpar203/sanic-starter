@@ -19,7 +19,9 @@ fileConfig(config.config_file_name)
 # for 'autogenerate' support
 # target_metadata = None
 from models import Base
+
 target_metadata = Base.metadata
+
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
@@ -53,7 +55,6 @@ def run_migrations_online():
     and associate a connection with the context.
 
     """
-    from models.user import User
     alembic_config = config.get_section(config.config_ini_section)
     alembic_config['sqlalchemy.url'] = os.environ['DATABASE_URL']
 
