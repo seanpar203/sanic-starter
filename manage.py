@@ -1,11 +1,9 @@
 """ Module for managing tasks through a simple cli interface. """
-
-# Modules
+# Libraries
 from manager import Manager
 
-# App
 from app import create_app
-from models import Base
+from models import create_db
 
 # Constants.
 manager = Manager()
@@ -16,8 +14,12 @@ def run():
     """ Starts server on port 8000. """
     create_app()
 
+
+@manager.command
 def init_db():
-    Base.metadata.create_all()
+    """ Creates all the tables. """
+    create_db()
+
 
 if __name__ == '__main__':
     manager.main()
