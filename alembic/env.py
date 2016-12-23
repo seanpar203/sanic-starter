@@ -55,6 +55,7 @@ def run_migrations_online():
     and associate a connection with the context.
 
     """
+    from models.user import User
     alembic_config = config.get_section(config.config_ini_section)
     alembic_config['sqlalchemy.url'] = os.environ['DATABASE_URL']
 
