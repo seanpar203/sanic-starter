@@ -27,4 +27,4 @@ class User(Base):
     # Methods
 
     def __repr__(self):
-        return '<User: a user object>'
+        return '<User: {}>'.format(self.id)
