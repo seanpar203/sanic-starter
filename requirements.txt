@@ -1,6 +1,5 @@
 aiofiles==0.3.0
 alembic==0.8.9
-asyncpg==0.8.1
 httptools==0.0.9
 Mako==1.0.6
 manage.py==0.2.10
