@@ -3,7 +3,7 @@
 from manager import Manager
 
 from app import create_app
-from models import create_db
+from app.models import create_db
 
 # Constants.
 manager = Manager()
