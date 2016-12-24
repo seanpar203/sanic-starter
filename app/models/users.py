@@ -3,7 +3,7 @@ from sqlalchemy import (
     DateTime, Date, Boolean
 )
 
-from models import Base
+from app.models import Base
 
 
 class User(Base):
@@ -17,7 +17,7 @@ class User(Base):
     perishable_token = Column(String(255), unique=True)
 
     # Personal Attributes.
-    birthday = Column(Date())
+    birthday = Column(Date)
     first_name = Column(String(35))
     last_name = Column(String(35))
 
