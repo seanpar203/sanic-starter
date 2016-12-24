@@ -15,10 +15,11 @@ config = context.config
 # This line sets up loggers basically.
 fileConfig(config.config_file_name)
 
+
 # add your model's MetaData object here
 # for 'autogenerate' support
 # target_metadata = None
-from models import Base
+from app.models import Base
 
 target_metadata = Base.metadata
 
@@ -55,14 +56,11 @@ def run_migrations_online():
     and associate a connection with the context.
 
     """
-    from models.user import User
+
     alembic_config = config.get_section(config.config_ini_section)
     alembic_config['sqlalchemy.url'] = os.environ['DATABASE_URL']
 
-    engine = engine_from_config(
-        alembic_config,
-        prefix='sqlalchemy.',
-        poolclass=pool.NullPool)
+    engine = engine_from_config(alembic_config)
 
     with engine.connect() as connection:
         context.configure(
