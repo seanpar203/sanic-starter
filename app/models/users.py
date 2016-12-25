@@ -1,3 +1,5 @@
+""" Module represents a User. """
+
 from sqlalchemy import (
     Column, String, Integer,
     DateTime, Date, Boolean
