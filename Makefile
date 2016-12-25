@@ -1,8 +1,9 @@
 init:
-	virtualenv -p python3 venv; \
+	python3 -m venv venv; \
+	echo 'source venv/bin/activate' >> .env; \
+	echo 'export DATABASE_URL=""' >> .env; \
 	source ./venv/bin/activate; \
-	pip install --upgrade --no-cache-dir -r requirements.txt; \
-	pip freeze > requirements.txt; \
+	pip3 install -r requirements.txt; \
 
 run:
 	python3 manage.py run
