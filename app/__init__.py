@@ -1,14 +1,10 @@
 """ App entry point. """
 import os
-import asyncio
-
-import uvloop
 from sanic import Sanic
 
 
 def create_app():
     """ Function for bootstrapping sanic app. """
-    asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
 
     app = Sanic(__name__)
 
