@@ -5,9 +5,6 @@ import asyncio
 import uvloop
 from sanic import Sanic
 
-# Prepend '/api' before every route.
-BP_OPTIONS = {'url_prefix': '/api'}
-
 
 def create_app():
     """ Function for bootstrapping sanic app. """
@@ -16,7 +13,7 @@ def create_app():
     app = Sanic(__name__)
 
     # Register blueprints.
-    from app.controllers.users import user
-    app.blueprint(user, **BP_OPTIONS)
+    from app.controllers.users import UserController
+    app.add_route(UserController(), '/api/user')
 
     app.run(debug=True, workers=os.cpu_count())
