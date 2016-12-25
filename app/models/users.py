@@ -12,14 +12,14 @@ class User(Base):
     id = Column(Integer, autoincrement=True, primary_key=True)
 
     # Authentication Attributes.
-    email = Column(String(255))
-    token_expires = Column(DateTime)
-    perishable_token = Column(String(255), unique=True)
+    email = Column(String(255), nullable=False)
+    token_expires = Column(DateTime, nullable=True)
+    perishable_token = Column(String(255), nullable=True, unique=True)
 
     # Personal Attributes.
-    birthday = Column(Date)
-    first_name = Column(String(35))
-    last_name = Column(String(35))
+    birthday = Column(Date, nullable=True)
+    first_name = Column(String(35), nullable=True)
+    last_name = Column(String(35), nullable=True)
 
     # Permission Based Attributes.
     is_active = Column(Boolean, default=False)
