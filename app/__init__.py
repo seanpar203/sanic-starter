@@ -12,7 +12,7 @@ def create_app():
 
     app = Sanic(__name__)
 
-    # Register blueprints.
+    # Register Blueprints/Views.
     from app.controllers.users import UserController
     app.add_route(UserController(), '/api/user')
 
