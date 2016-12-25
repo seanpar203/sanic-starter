@@ -12,4 +12,4 @@ def create_app():
     from app.controllers.users import UserController
     app.add_route(UserController(), '/api/user')
 
-    app.run(debug=True, workers=os.cpu_count())
+    app.go_fast(debug=True, workers=os.cpu_count())
