@@ -25,6 +25,14 @@ class User(Base):
     is_active = Column(Boolean, default=False)
 
     # Methods
-
     def __repr__(self):
+        """ Show user object info. """
         return '<User: {}>'.format(self.id)
+
+    def full_name(self):
+        """ Return users full name. """
+        return '{} {}'.format(self.first_name, self.last_name)
+
+    def formatted_birthday(self):
+        """ Return birthday date in a understandable format. """
+        return self.birthday.strftime('%m/%d/%Y')
