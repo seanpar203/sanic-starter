@@ -11,7 +11,7 @@ from app.models.users import User
 class UserController(HTTPMethodView):
     """ Handles User CRUD operations. """
 
-    def get(self, request):
+    async def get(self, request):
         """ Gets all users in the DB
 
         Args:
@@ -37,7 +37,7 @@ class UserController(HTTPMethodView):
         # Return json response.
         return json({'users': users})
 
-    def post(self, request):
+    async def post(self, request):
         """ Creates a new user based on the `email` key
 
         Args:
