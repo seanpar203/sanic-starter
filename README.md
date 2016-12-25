@@ -30,6 +30,7 @@ have to update the `/alembic/env.py` file to reflect your preferred way.
 
 
 ### Commands
+`make run` - Runs the Sanic server
 
 `make revision` - Checks all of the `Base.metadata` and generates a new
 migration script under /alembic/versions
