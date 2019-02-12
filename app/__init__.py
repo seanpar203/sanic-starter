@@ -10,6 +10,6 @@ def create_app():
 
     # Register Blueprints/Views.
     from app.controllers.users import UserController
-    app.add_route(UserController(), '/api/user')
+    app.add_route(UserController.as_view(), '/api/user')
 
     app.go_fast(debug=True, workers=os.cpu_count())
