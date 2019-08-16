@@ -6,16 +6,15 @@ Notes:
      and reduces noise in code by not having to manually
      commit or rollback the db if a exception occurs.
 """
-import os
 from contextlib import contextmanager
 
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, Session as SessionORM
+from sqlalchemy.engine import Engine
 
-engine = create_engine(os.environ['DATABASE_URL'])
 
-# Session to be used throughout app.
-Session = sessionmaker(bind=engine)
+engine: Engine = None
+Session: SessionORM = None
 
 
 @contextmanager
@@ -24,8 +23,16 @@ def scoped_session():
     try:
         yield session
         session.commit()
-    except:
+    except Exception:
         session.rollback()
         raise
     finally:
         session.close()
+
+
+def init(app):
+    global engine, Session
+
+    engine = create_engine(app.config.DATABASE_URL)
+    # Session to be used throughout app.
+    Session = sessionmaker(bind=engine, expire_on_commit=False)
