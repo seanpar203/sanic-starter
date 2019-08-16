@@ -135,3 +135,9 @@ crashlytics-build.properties
 fabric.properties
 
 .idea/
+
+# VSCode
+.vscode/
+
+# SQLite3 database
+app.db
