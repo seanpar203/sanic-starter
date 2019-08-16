@@ -27,8 +27,8 @@ class UserController(HTTPMethodView):
          """
         # Gets all users in DB.
         with scoped_session() as session:
-            stmt = User.__table__.select()
-            users = [dict(u) for u in session.execute(stmt)]
+            users = session.query(User).all()
+
         return json({'users': users})
 
     async def post(self, request):
