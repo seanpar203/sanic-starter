@@ -8,6 +8,9 @@ def create_app(config=Config):
     app = Sanic(__name__)
     app.config.from_object(config)
 
+    from app import database
+    database.init(app)
+
     # Register Blueprints/Views.
     from app.controllers.users import UserController
     app.add_route(UserController.as_view(), '/api/user')
