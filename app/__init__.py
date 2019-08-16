@@ -12,6 +12,8 @@ def create_app(config=Config):
     from app.controllers.users import UserController
     app.add_route(UserController.as_view(), '/api/user')
 
+    return app
+
 
 def run_app(config=Config):
     app = create_app(config)

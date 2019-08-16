@@ -2,7 +2,7 @@
 # Libraries
 from manager import Manager
 
-from app import create_app
+from app import run_app
 
 # Constants.
 manager = Manager()
@@ -11,7 +11,7 @@ manager = Manager()
 @manager.command
 def run():
     """ Starts server on port 8000. """
-    create_app()
+    run_app()
 
 if __name__ == '__main__':
     manager.main()
