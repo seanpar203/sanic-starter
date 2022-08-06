@@ -7,7 +7,7 @@ MarkupSafe==1.0
 multidict==4.4.2
 psycopg2==2.7.7
 python-editor==1.0.3
-Sanic==18.12.0
+Sanic==20.12.7
 SQLAlchemy==1.2.8
 ujson==1.35
 uvloop==0.11.3
