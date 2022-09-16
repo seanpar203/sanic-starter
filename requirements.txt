@@ -1,7 +1,7 @@
 aiofiles==0.4.0
 alembic==1.0.7
 httptools==0.0.11
-Mako==1.0.7
+Mako==1.2.2
 manage.py==0.2.10
 MarkupSafe==1.0
 multidict==4.4.2
